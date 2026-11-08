@@ -5,7 +5,7 @@ This repository showcases a working Active Directory setup within a home lab env
 - Create and enforce Group Policy
 - Set up DHCP on the domain controller
 
-# Software Use
+# Software Used
 - Proxmox VE: hyporvisor
 - Windows Server 2022: Domain controller and member server
 - Windows 11 Pro: workstation to mimic client
@@ -26,13 +26,16 @@ Main Lab Network(`vmbr0`)
   
 | VM | Role | IP |
 |---|---|---|
-| `SRV-DC01` | Domain Controller | x.x.x.51 |
-| `SRV-MEM01`| Member Server | x.x.x.52 |
-| `SRV-MEM02 `| Windows 11 Pro Client | x.x.x.53 |
+| `SRV-DC01` | Domain Controller | 192.168.0.51 |
+| `SRV-MEM01`| Member Server | 192.168.0.52 |
+| `SRV-MEM02 `| Windows 11 Pro Client | 192.168.0.53 |
 
 Isolated DHCP Network(`vmbr3`)
 - A linux bridge intended for purely layer 2 switch
 - DC01's second adapter (`LabNet`): 10.10.10.1/24, no gateway, no DNS server
 - DHCP scope: 10.10.10.100 to 10.10.10.200
 
+![Picture of Proxmox Network Configurations displaying vmbr0 and vmbr3](.images/proxmoxNetwork.png)
 
+
+# Active Directory Design
